@@ -2,7 +2,7 @@ pipeline {
     agent {label 'verisoft-2'}
 
     parameters {
-        string(name: 'REPO_URL', defaultValue: 'https://github.com/rechi7467/Automation', description: 'Repository URL')
+        string(name: 'REPO_URL', defaultValue: 'https://github.com/rechi7467/Automation.git', description: 'Repository URL')
         string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch name to build')
     }
 
