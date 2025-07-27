@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
         string(name: 'REPO_URL', defaultValue: 'https://github.com/rechi7467/Automation.git', description: 'Git repository URL')
-        string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch name to build')
+        string(name: 'BRANCH_NAME', defaultValue: 'master', description: 'Branch name to build')
     }
 
     environment {
@@ -11,11 +11,7 @@ pipeline {
     }
 
     triggers {
-        // שני זמנים שונים להפעלת הפייפליין:
-        // כל יום שני בשעה 05:30 עם הסניף שהוגדר בפרמטר
-        //cron('30 5 * * 1')עושה בעיות אם מתזמנים פעמיים...
-        // כל יום בשעה 14:00 עם הסניף שהוגדר בפרמטר
-        cron('0 14 * * *')
+        cron('30 5 * * 1\n0 14 * * *')
     }
 
     stages {
